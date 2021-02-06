@@ -1,0 +1,13 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+    - name: update apt repository list
+      apt:
+        update_cache: yes
+
+    - name: remove apache server
+      apt:
+        name: apache2
+        state: absent
